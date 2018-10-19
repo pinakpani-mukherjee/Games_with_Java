@@ -2,6 +2,8 @@ package com.pinakpani;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferStrategy;
+
 /*
 Game class is a daughter of the Canvas class.
 It is also implemeting runnable, with the run function created below
@@ -63,11 +65,31 @@ public class Game extends Canvas implements Runnable
          */
         while(running)
         {
-            System.out.println("Running.....");
+            update();
+            render();
+
 
         }
     }
+    public void update()
+    {
 
+    }
+    public void render()
+    {
+        BufferStrategy bs = getBufferStrategy();
+        if (bs == null)
+        {
+            createBufferStrategy(3);
+            return;
+        }
+        Graphics g = bs.getDrawGraphics();
+        g.setColor(Color.BLACK);
+        g.fillRect(0,0,getWidth(),getHeight());
+        g.dispose();
+        bs.show();
+
+    }
     public static void main(String[] args)
     {
         /*
