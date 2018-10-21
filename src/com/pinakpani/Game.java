@@ -71,16 +71,26 @@ public class Game extends Canvas implements Runnable
 
     public void run()
     {
+        long lastTime = System.nanoTime();
+        final double ns = 1000000000.0/60.0;
+        double delta = 0;
         /*
         this is the main program where we will insert graphics and other stuff
          */
         while(running)
         {
-            update();
+            long now = System.nanoTime();
+            delta += (now-lastTime)/ns;
+            lastTime = now;
+            while (delta >=1)
+            {
+                update();
+                delta--;
+            }
             render();
 
-
         }
+        stop();
     }
     public void update()
     {
@@ -94,9 +104,19 @@ public class Game extends Canvas implements Runnable
             createBufferStrategy(3);
             return;
         }
+        /*
+        Never forget to clear before render
+         */
+        screen.clear();
+        screen.render();
+        for (int i=0; i<pixels.length;i++)
+        {
+            pixels[i] = screen.pixels[i];
+        }
         Graphics g = bs.getDrawGraphics();
         g.setColor(Color.BLACK);
         g.fillRect(0,0,getWidth(),getHeight());
+        g.drawImage(image,0,0,getWidth(),getHeight(), null);
         /*
         never forget to dispose
         never forget to show buffer as well
