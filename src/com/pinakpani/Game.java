@@ -20,6 +20,7 @@ public class Game extends Canvas implements Runnable
     public static int width = 300;
     public static int height = width/16*9;
     public static int scale = 3;
+    public static String title = "Rain";
 
     public Game()
     {
@@ -70,10 +71,14 @@ public class Game extends Canvas implements Runnable
     }
 
     public void run()
+
     {
         long lastTime = System.nanoTime();
+        long timer = System.currentTimeMillis();
         final double ns = 1000000000.0/60.0;
         double delta = 0;
+        int frames = 0;
+        int updates = 0;
         /*
         this is the main program where we will insert graphics and other stuff
          */
@@ -85,10 +90,20 @@ public class Game extends Canvas implements Runnable
             while (delta >=1)
             {
                 update();
+                updates++;
                 delta--;
             }
             render();
+            frames++;
 
+            if (System.currentTimeMillis() - timer > 1000)
+            {
+                timer += 1000;
+                System.out.println(updates+" ups, "+frames + " fps");
+                frame.setTitle(Game.title + "  |  " + updates+" ups, "+frames + " fps" );
+                frames = 0;
+                updates = 0;
+            }
         }
         stop();
     }
@@ -134,7 +149,7 @@ public class Game extends Canvas implements Runnable
          */
         Game game = new Game();
         game.frame.setResizable(false);
-        game.frame.setTitle("My Game");
+        game.frame.setTitle(Game.title);
         game.frame.add(game);
         game.frame.pack();
         game.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

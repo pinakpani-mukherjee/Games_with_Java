@@ -15,7 +15,7 @@ public class Screen
         this.height = height;
         pixels = new int[width*height];
     }
-
+    
     public void clear()
     {
         for (int i =0; i<pixels.length;i++)
