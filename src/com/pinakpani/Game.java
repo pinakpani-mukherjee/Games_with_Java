@@ -1,6 +1,7 @@
 package com.pinakpani;
 
 import com.pinakpani.graphics.Screen;
+import com.pinakpani.input.Keyboard;
 
 import javax.swing.*;
 import java.awt.*;
@@ -32,12 +33,18 @@ public class Game extends Canvas implements Runnable
 
         screen = new Screen(width,height);
         frame = new JFrame();
+        key = new Keyboard();
+        //important to add key listner, dont forget to add this, or else your program wont accept key input
+        //also add KeyListner after making new Keyboard;
+        frame.addKeyListener(key);
+
     }
     /*
     Crating the private variables for the main Game class
      */
     private Thread gamethread;
     private JFrame frame;
+    private Keyboard key;
     private boolean running = false;
 
     private com.pinakpani.graphics.Screen screen;
@@ -110,8 +117,12 @@ public class Game extends Canvas implements Runnable
     public int x=0,y=0;
     public void update()
     {
-        x++;
-        y++;
+        //dont forget to update your keys, or else it wont show up
+        key.update();;
+        if(key.up) y--;
+        if(key.down) y++;
+        if(key.right) x++;
+        if(key.left) x--;
     }
     public void render()
     {
