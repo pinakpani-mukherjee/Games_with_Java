@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96f69585-b286-4da0-9651-b0abda1856ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/res.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Games_with_Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Games_with_Java.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Games_with_Java/com/pinakpani/graphics/Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Games_with_Java/com/pinakpani/graphics/Screen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/textures/spritesheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/textures/spritesheet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Games_with_Java/com/pinakpani/graphics/SpriteSheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Games_with_Java/com/pinakpani/graphics/SpriteSheet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pinakpani/graphics/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pinakpani/graphics/Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pinakpani/graphics/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pinakpani/graphics/Sprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pinakpani/graphics/SpriteSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pinakpani/graphics/SpriteSheet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,12 +45,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="4" />
-          <entry key="java" value="5545" />
+          <entry key="java" value="5640" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5545" />
+          <entry key="JAVA" value="5640" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
@@ -63,11 +58,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/pinakpani/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2108">
-              <caret line="124" column="25" selection-start-line="124" selection-start-column="25" selection-end-line="124" selection-end-column="25" />
+            <state relative-caret-position="221">
+              <caret line="88" column="8" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,17 +73,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/pinakpani/graphics/Screen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-13">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="225">
+              <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/pinakpani/graphics/SpriteSheet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+            <state relative-caret-position="34">
+              <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,14 +130,14 @@
         <option value="$PROJECT_DIR$/src/com/pinakpani/Main.java" />
         <option value="$PROJECT_DIR$/src/com/pinakpani/Screen.java" />
         <option value="$PROJECT_DIR$/src/com/pinakpani/input/Keyboard.java" />
-        <option value="$PROJECT_DIR$/src/com/pinakpani/Game.java" />
         <option value="$PROJECT_DIR$/src/com/pinakpani/graphics/Sprite.java" />
-        <option value="$PROJECT_DIR$/src/com/pinakpani/graphics/Screen.java" />
         <option value="$PROJECT_DIR$/src/com/pinakpani/graphics/SpriteSheet.java" />
+        <option value="$PROJECT_DIR$/src/com/pinakpani/graphics/Screen.java" />
+        <option value="$PROJECT_DIR$/src/com/pinakpani/Game.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -194,7 +189,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540699886049" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540700763921" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/res" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -278,23 +273,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/pinakpani/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2108">
-          <caret line="124" column="25" selection-start-line="124" selection-start-column="25" selection-end-line="124" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/pinakpani/graphics/Screen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/pinakpani/input/Keyboard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -314,8 +292,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/pinakpani/graphics/SpriteSheet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+        <state relative-caret-position="34">
+          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/pinakpani/graphics/Screen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/pinakpani/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="88" column="8" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

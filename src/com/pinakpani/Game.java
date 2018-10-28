@@ -86,6 +86,8 @@ public class Game extends Canvas implements Runnable
         double delta = 0;
         int frames = 0;
         int updates = 0;
+        //adds game in foreground, not required always
+        //requestFocus();
         /*
         this is the main program where we will insert graphics and other stuff
          */
