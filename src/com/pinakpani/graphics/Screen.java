@@ -1,10 +1,12 @@
 package com.pinakpani.graphics;
 
+import com.pinakpani.level.tile.Tile;
+
 import java.util.Random;
 
 public class Screen
 {
-    private int width, height;
+    public int width, height;
     public int[] pixels;
     public final int MAP_SIZE =64;
     public final int MAP_SIZE_MASK = MAP_SIZE - 1;
@@ -48,6 +50,16 @@ public class Screen
 
 
            }
+        }
+    }
+    public void renderTile(int xp, int yp, Tile tile){
+        for (int y = 0; y < tile.sprite.SIZE; y++) {
+            int ya = y + yp;
+            for (int x = 0; x < tile.sprite.SIZE; x++) {
+                int xa = y + xp;
+                if(xa<0||xa>=width||ya<0||ya>=width) break;
+                pixels[xa+ya*width] = tile.sprite.pixels[x+y*tile.sprite.SIZE];
+            }
         }
     }
 }
