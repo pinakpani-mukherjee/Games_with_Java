@@ -2,13 +2,14 @@ package com.pinakpani;
 
 import com.pinakpani.graphics.Screen;
 import com.pinakpani.input.Keyboard;
+import com.pinakpani.level.RandomLevel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
-
+import com.pinakpani.level.Level;
 /*
 Game class is a daughter of the Canvas class.
 It is also implemeting runnable, with the run function created below
@@ -22,6 +23,17 @@ public class Game extends Canvas implements Runnable
     public static int height = width/16*9;
     public static int scale = 3;
     public static String title = "Rain";
+    private Thread gamethread;
+    private JFrame frame;
+    private Keyboard key;
+    private Level level;
+    private boolean running = false;
+
+    private com.pinakpani.graphics.Screen screen;
+
+    private BufferedImage image = new BufferedImage(width,height, BufferedImage.TYPE_INT_RGB);
+    private int[] pixels = ((DataBufferInt)image.getRaster().getDataBuffer()).getData();
+
 
     public Game()
     {
@@ -37,20 +49,12 @@ public class Game extends Canvas implements Runnable
         //important to add key listner, dont forget to add this, or else your program wont accept key input
         //also add KeyListner after making new Keyboard;
         frame.addKeyListener(key);
+        level = new RandomLevel(64,64);
 
     }
     /*
     Crating the private variables for the main Game class
      */
-    private Thread gamethread;
-    private JFrame frame;
-    private Keyboard key;
-    private boolean running = false;
-
-    private com.pinakpani.graphics.Screen screen;
-
-    private BufferedImage image = new BufferedImage(width,height, BufferedImage.TYPE_INT_RGB);
-    private int[] pixels = ((DataBufferInt)image.getRaster().getDataBuffer()).getData();
 
     public synchronized void start()
     {
@@ -138,13 +142,13 @@ public class Game extends Canvas implements Runnable
         Never forget to clear before render
          */
         screen.clear();
-        screen.render(x,y);
+        level.render(x,y,screen);
         for (int i=0; i<pixels.length;i++)
         {
             pixels[i] = screen.pixels[i];
         }
         Graphics g = bs.getDrawGraphics();
-        g.setColor(Color.BLACK);
+        g.setColor(Color.BLUE);
         g.fillRect(0,0,getWidth(),getHeight());
         g.drawImage(image,0,0,getWidth(),getHeight(), null);
         /*

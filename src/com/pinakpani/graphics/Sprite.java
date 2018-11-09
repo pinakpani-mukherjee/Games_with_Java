@@ -10,6 +10,7 @@ public class Sprite {
 
     //creating my sprite
     public static Sprite grass = new Sprite(16,0,0, tiles);
+    public static Sprite voidSprite = new Sprite(16,0x339BF5);
 
     //constructor method
     public Sprite(int size,int x, int y, SpriteSheet sheet){
@@ -20,6 +21,18 @@ public class Sprite {
         this.sheet = sheet;
         load();
     }
+    public Sprite(int size, int color){
+        SIZE = size;
+        pixels = new int[SIZE*SIZE];
+        setColor(color);
+    }
+
+    private void setColor(int color) {
+        for(int i=0;i<SIZE*SIZE;i++){
+            pixels[i] = color;
+        }
+    }
+
     private void load(){
             for (int y = 0; y<SIZE; y++){
                 for(int x=0;x<SIZE;x++){
