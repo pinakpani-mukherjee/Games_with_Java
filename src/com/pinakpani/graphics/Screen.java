@@ -1,5 +1,6 @@
 package com.pinakpani.graphics;
 
+import com.pinakpani.entity.mob.Player;
 import com.pinakpani.level.tile.Tile;
 
 import java.util.Random;
@@ -51,6 +52,31 @@ public class Screen
             }
         }
     }
+    public void renderPlayer(int xp, int yp, Sprite sprite, int flip) {
+        xp -= xOffset;
+        yp -= yOffset;
+        for (int y = 0; y < sprite.SIZE; y++) {
+            int ya = y + yp;
+            int ys = y;
+            if(flip==2||flip==3) {
+                ys = 31-y;
+            }
+            for (int x = 0; x < sprite.SIZE; x++) {
+                int xa = x + xp;
+                int xs = x;
+                if(flip==1||flip==3) {
+                    xs = 31 - x;
+                }
+                if (xa < -sprite.SIZE || xa >= width || ya < 0 || ya >= height) break;
+                if (xa < 0) xa = 0;
+                // code to not render the pick bg color of the sprites
+                int col = sprite.pixels[xs + ys * sprite.SIZE];
+                if(col != 0xFFFF00FF) pixels[xa + ya * width] = col;
+            }
+        }
+    }
+
+
     public void setxOffset(int xOffset, int yOffset){
         this.xOffset = xOffset;
         this.yOffset = yOffset;

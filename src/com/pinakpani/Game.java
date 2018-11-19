@@ -1,5 +1,6 @@
 package com.pinakpani;
 
+import com.pinakpani.entity.mob.Player;
 import com.pinakpani.graphics.Screen;
 import com.pinakpani.input.Keyboard;
 import com.pinakpani.level.RandomLevel;
@@ -19,6 +20,7 @@ public class Game extends Canvas implements Runnable
     /*
     Setting up my frames
      */
+    public static final long serialVersionUID = 1L;
     public static int width = 300;
     public static int height = width/16*9;
     public static int scale = 3;
@@ -27,6 +29,7 @@ public class Game extends Canvas implements Runnable
     private JFrame frame;
     private Keyboard key;
     private Level level;
+    private Player player;
     private boolean running = false;
 
     private com.pinakpani.graphics.Screen screen;
@@ -50,6 +53,7 @@ public class Game extends Canvas implements Runnable
         //also add KeyListner after making new Keyboard;
         frame.addKeyListener(key);
         level = new RandomLevel(64,64);
+        player = new Player(key);
 
     }
     /*
@@ -120,15 +124,12 @@ public class Game extends Canvas implements Runnable
         }
         stop();
     }
-    public int x=0,y=0;
-    public void update()
+        public void update()
     {
         //dont forget to update your keys, or else it wont show up
         key.update();;
-        if(key.up) y--;
-        if(key.down) y++;
-        if(key.right) x++;
-        if(key.left) x--;
+        player.update();
+
     }
     public void render()
     {
@@ -142,7 +143,10 @@ public class Game extends Canvas implements Runnable
         Never forget to clear before render
          */
         screen.clear();
-        level.render(x,y,screen);
+        int xScroll = player.x - screen.width/2;
+        int yScroll = player.y - screen.height/2;
+        level.render(xScroll,yScroll,screen);
+        player.render(screen);
         for (int i=0; i<pixels.length;i++)
         {
             pixels[i] = screen.pixels[i];
